@@ -4,7 +4,6 @@ interface PaymentOption {
     void processPayment(double amount);
 }
 
-// Klassen voor betaalmethodes //
 class IdealPayment implements PaymentOption {
     @Override
     public void processPayment(double amount) {
@@ -19,7 +18,6 @@ class QRCodePayment implements PaymentOption {
     }
 }
 
-// Klasse voor betaalverzoek //
 class PaymentRequest {
     private double amount;
     private PaymentOption paymentOption;
@@ -35,7 +33,6 @@ class PaymentRequest {
     }
 }
 
-// In deze klasse wordt alles processen van dit programma op gang gezet // 
 class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -45,8 +42,7 @@ class Main {
         scanner.nextLine(); // Nieuwe regel maken //
 
         System.out.println("Kies betaaloptie (typ exact): iDeal of QR");
-        String optie = scanner.nextLine(); // Keuze van gebruiker //
-
+        String optie = scanner.nextLine();
         PaymentOption paymentOption;
 
         switch (optie) {
